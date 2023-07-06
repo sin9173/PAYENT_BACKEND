@@ -1,0 +1,22 @@
+server:
+  servlet:
+    context-path: /api
+
+webclient:
+  tos:
+    base-url: https://api.tosspayments.com
+    secret-key: dGVzdF9za196WExrS0V5cE5BcldtbzUwblgzbG1lYXhZRzVSOg==
+
+  innopay:
+    base-url: https://api.innopay.co.kr/api
+    license-key: Ma29gyAFhvv/+e4/AHpV6pISQIvSKziLIbrNoXPbRS5nfTx2DOs8OJve+NzwyoaQ8p9Uy1AN4S1I0Um5v7oNUg==
+    mid: testpay01m
+
+  bootpay:
+    base-url: http://aaa
+    private-key: 96mhkMUTzUQX8kzT2P6BnyuQ9rQqeNs4FZ0LQ6agjsM=
+
+
+#logging:
+#  level:
+#    root: DEBUG
