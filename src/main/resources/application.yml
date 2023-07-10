@@ -17,6 +17,10 @@ webclient:
     private-key: 96mhkMUTzUQX8kzT2P6BnyuQ9rQqeNs4FZ0LQ6agjsM=
 
 
+slack:
+  webhook: https://hooks.slack.com/services/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
+
+
 #logging:
 #  level:
 #    root: DEBUG
