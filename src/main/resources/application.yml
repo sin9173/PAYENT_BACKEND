@@ -18,7 +18,7 @@ webclient:
 
 
 slack:
-  webhook: https://hooks.slack.com/services/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
+  webhook: https://hooks.slack.com/services/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
 
 
 #logging:

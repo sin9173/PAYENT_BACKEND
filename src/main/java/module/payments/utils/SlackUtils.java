@@ -30,7 +30,7 @@ public class SlackUtils {
 
     public void slackSend(String message) {
         threadPoolTaskExecutor.execute(() ->
-                sendSlackMessage("Error", message,"#36a64f",
+                sendSlackMessage("ERROR", message,"#36a64f",
                         List.of(
                                 createField("test01", "1"),
                                 createField("test02", "2"),
@@ -45,9 +45,10 @@ public class SlackUtils {
                 .collect(Collectors.toList())
                 .stream().map(m -> createField(m.getKey(), m.getValue()))
                 .collect(Collectors.toList());
-        threadPoolTaskExecutor.execute(() ->
-                sendSlackMessage("Error", message,"#36a64f", fieldList));
+//        threadPoolTaskExecutor.execute(() ->
+//                sendSlackMessage("ERROR", message,"#36a64f", fieldList));
 
+        sendSlackMessage("ERROR", message, "#36a64f", fieldList);
     }
 
     private void sendSlackMessage(String fallback, String message, String color, List<SlackField> feild_list) {
