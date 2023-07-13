@@ -19,8 +19,10 @@ public class ResultService {
         map.put("test01", "01");
         map.put("test02", "02");
         map.put("test03", "03");
-        slackUtils.slackSend(dto.toString(), map);
+//        slackUtils.slackSend(dto.toString(), map);
 
+
+        System.out.println("dto : " + dto);
         return new WebhookResDto(true);
     }
 }
