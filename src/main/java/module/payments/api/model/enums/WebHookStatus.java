@@ -59,12 +59,11 @@ public enum WebHookStatus implements EnumMapperType { //부트페이 Webhook 통
         return name();
     }
 
-    @JsonValue
     public Integer value() {
         return this.code;
     }
 
-    @JsonCreator
+    @JsonCreator(mode = JsonCreator.Mode.DELEGATING)
     public static WebHookStatus find(Integer code) {
         return Arrays.stream(values()).filter(enu -> enu.getCode().equals(code))
                 .findAny().orElseThrow(() -> new IllegalArgumentException("잘못된 결제상태 입니다."));
