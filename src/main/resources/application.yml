@@ -21,6 +21,6 @@ slack:
   webhook: https://hooks.slack.com/services/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
 
 
-logging:
-  level:
-    root: DEBUG
+#logging:
+#  level:
+#    root: DEBUG
