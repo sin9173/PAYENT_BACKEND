@@ -1,5 +1,6 @@
 package module.payments.api.model.bootpay;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
@@ -7,8 +8,10 @@ import lombok.ToString;
 import module.payments.api.model.bootpay.webhook.*;
 import module.payments.api.model.enums.EscrowStatus;
 import module.payments.api.model.enums.WebHookStatus;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Map;
 
 @Getter
@@ -70,12 +73,15 @@ public class WebhookDto { //결제 결과 통지, 결제 조회 데이터
     @Schema(description = "결제가 진행된 통화 정보입니다. 원화 - KRW, 달러 - USD", example = "KRW")
     private String currency;
 
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ssXXX")
     @Schema(description = "결제 완료된 시간입니다. ( PG에서 주는 데이터 기반으로 저장 )", example = "2022-04-07T14:11:35+09:00")
     private LocalDateTime purchased_at;
 
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ssXXX")
     @Schema(description = "결제 취소된 시간입니다. ( PG에서 주는 데이터 기반으로 저장 )", example = "null")
     private LocalDateTime canceled_at;
 
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ssXXX")
     @Schema(description = "결제 요청된 시간입니다. ( 부트페이 서버 기준시간으로 저장 )", example = "2022-04-07T14:10:51+09:00")
     private LocalDateTime requested_at;
 
@@ -92,9 +98,11 @@ public class WebhookDto { //결제 결과 통지, 결제 조회 데이터
     @Schema(description = "에스크로 현재 상태에 대한 언어별 응답")
     private String escrow_status_local;
 
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ssXXX")
     @Schema(description = "배송시작일자")
     private LocalDateTime shipping_started_at;
 
+    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ssXXX")
     @Schema(description = "구매자가 배송을 받고 구매 승인을 한 시각")
     private LocalDateTime receipt_confirmed_at;
 
